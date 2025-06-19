@@ -1,506 +1,613 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProPlast CR - Próximamente</title>
+    <meta name="description" content="ProPlast CR estará disponible muy pronto - Soluciones profesionales en tablillas plásticas PVC">
+    <link rel="icon" href="assets/img/Logo ProPlast2.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <title>PROPLAST CR</title>
-  <meta content="Venta de Tablilla Plastica y sus componentes a todo Costa Rica - ProPlastCR" name="description">
-  <meta content="Tablilla Plastica" name="keywords">
-  <meta content="Furring" name="keywords">
-  <meta content="Venta de Tabilla Plastica" name="keywords">
-  <meta content="Lugares para comprar Tabilla Plastica" name="keywords">
-  
-  <!-- Favicons -->
-  <link href="assets/img/Logo ProPlast2.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-    rel="stylesheet">
+        /* Sophisticated animated background */
+        .background-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            z-index: 1;
+        }
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+        .geometric-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            overflow: hidden;
+        }
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+        .shape {
+            position: absolute;
+            border: 1px solid rgba(184, 134, 11, 0.1);
+            animation: float-shapes 20s linear infinite;
+        }
 
+        .shape-1 {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: 10%;
+            border-radius: 50%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 15%;
+            transform: rotate(45deg);
+            animation-delay: -5s;
+        }
+
+        .shape-3 {
+            width: 100px;
+            height: 100px;
+            bottom: 20%;
+            left: 20%;
+            border-radius: 20%;
+            animation-delay: -10s;
+        }
+
+        .shape-4 {
+            width: 120px;
+            height: 120px;
+            top: 20%;
+            right: 30%;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            animation-delay: -15s;
+        }
+
+        @keyframes float-shapes {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.1;
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 0.3;
+            }
+        }
+
+        .grid-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(184, 134, 11, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(184, 134, 11, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 3;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(184, 134, 11, 0.2);
+            border-radius: 24px;
+            padding: 80px 60px;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.7),
+                0 0 0 1px rgba(184, 134, 11, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            max-width: 700px;
+            width: 90%;
+            z-index: 10;
+            position: relative;
+            animation: slideUp 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .logo-container {
+            position: relative;
+            margin: 0 auto 40px;
+            width: 140px;
+            height: 140px;
+        }
+
+        .logo {
+            width: 140px;
+            height: 140px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.4),
+                0 0 0 2px rgba(184, 134, 11, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            animation: gentle-pulse 3s ease-in-out infinite;
+            position: relative;
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #b8860b, #daa520, #b8860b);
+            border-radius: 26px;
+            z-index: -1;
+            animation: rotate-border 4s linear infinite;
+        }
+
+        @keyframes rotate-border {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 22px;
+        }
+
+        @keyframes gentle-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .company-name {
+            background: linear-gradient(135deg, #daa520, #b8860b, #cd853f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #a0a0a0;
+            margin-bottom: 40px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(184, 134, 11, 0.1);
+            border: 1px solid rgba(184, 134, 11, 0.3);
+            border-radius: 50px;
+            padding: 12px 24px;
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #daa520;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #daa520;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .message {
+            font-size: 1.1rem;
+            color: #cccccc;
+            line-height: 1.7;
+            margin-bottom: 50px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+        }
+
+        .highlight {
+            color: #daa520;
+            font-weight: 600;
+        }
+
+        .social-section {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid rgba(184, 134, 11, 0.15);
+            border-radius: 20px;
+            padding: 40px 30px;
+            margin-top: 40px;
+        }
+
+        .social-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 8px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .social-description {
+            color: #999999;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 16px;
+            font-size: 1.4rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 8px 25px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(184, 134, 11, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.4), transparent);
+            transition: left 0.6s;
+        }
+
+        .social-link:hover::before {
+            left: 100%;
+        }
+
+        .social-link:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.4),
+                0 0 0 2px rgba(184, 134, 11, 0.4);
+        }
+
+        .whatsapp:hover { color: #25d366; }
+        .facebook:hover { color: #4267b2; }
+        .instagram:hover { color: #e4405f; }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 15px;
+            background: rgba(30, 30, 30, 0.6);
+            border: 1px solid rgba(184, 134, 11, 0.1);
+            border-radius: 12px;
+            color: #cccccc;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(184, 134, 11, 0.1);
+            border-color: rgba(184, 134, 11, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+            color: #daa520;
+        }
+
+        .loading-animation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin: 30px 0;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #daa520, #b8860b);
+            animation: sophisticated-bounce 1.6s ease-in-out infinite;
+        }
+
+        .dot:nth-child(1) { animation-delay: -0.32s; }
+        .dot:nth-child(2) { animation-delay: -0.16s; }
+        .dot:nth-child(3) { animation-delay: 0s; }
+
+        @keyframes sophisticated-bounce {
+            0%, 80%, 100% {
+                transform: scale(0.8);
+                opacity: 0.5;
+            }
+            40% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 50px 30px;
+                margin: 20px;
+                border-radius: 20px;
+            }
+            
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .message {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+            
+            .social-links {
+                gap: 15px;
+            }
+            
+            .social-link {
+                width: 52px;
+                height: 52px;
+                font-size: 1.2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .logo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .logo-container {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <div class="background-layer"></div>
+    
+    <div class="geometric-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div> 
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+    
+    <div class="grid-overlay"></div>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="header d-flex align-items-center">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
-      <a href="https://api.whatsapp.com/send?phone=50688890637" class="logo d-flex align-items-center">
+    <div class="container">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="assets/img/Logo ProPlast2.png" alt="ProPlast CR Logo">
+            </div>
+        </div>
         
-        <img src="assets/img/Logo ProPlast2.png" alt=""> 
-      </a>
-
-      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="index.html" class="active">INICIO</a></li>
-          <li><a href="about.html">NOSOTROS</a></li>
-          <li><a href="projects.html">CATÁLOGO</a></li>
-          <li><a href="services.html">Políticas</a></li>
-
-          <li><a href="contact.html">Contáctenos</a></li>
-        </ul>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero">
-
-    <div class="info d-flex align-items-center">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6 text-center">
-            <h2 data-aos="fade-down">PROPLAST <span>CR</span></h2>
-            <p data-aos="fade-up">Tu aliado en soluciones integrales de tablillas plásticas pvc y accesorios de instalación. Descubre una amplia gama de productos diseñados para combinar calidad, funcionalidad y estilo, perfectos para cualquier proyecto. Explora nuestro catálogo y encuentra exactamente lo que necesitas para hacer realidad tus ideas. ¡Estamos listos para superar tus expectativas!</p>
-          </div>
+        <h1><span class="company-name">PROPLAST CR</span></h1>
+        <p class="subtitle">Soluciones Profesionales en PVC</p>
+        
+        <div class="status-indicator">
+            <div class="status-dot"></div>
+            <span>Próximamente</span>
         </div>
-      </div>
-    </div>
-
-    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-
-      <div class="carousel-item active" style="background-image: url(assets/img/casa13.jpg)">
-      </div>
-      <div class="carousel-item" style="background-image: url(assets/img/casa2.jpeg)"></div>
-      <div class="carousel-item" style="background-image: url(assets/img/casa10.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(assets/img/casa1.jpeg)"></div>
-      <div class="carousel-item" style="background-image: url(assets/img/casa12.jpg)"></div>
-
-      <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-      </a>
-
-      <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-      </a>
-
+        
+        <p class="message">
+            Estamos desarrollando una experiencia digital excepcional para presentar nuestras <span class="highlight">soluciones premium en tablillas plásticas PVC</span>. Nuestra plataforma estará disponible muy pronto con tecnología de vanguardia y un catálogo completo de productos profesionales.
+        </p>
+        
+        <div class="loading-animation">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        
+        <div class="social-section">
+            <h3 class="social-title">Mantente Informado</h3>
+            <p class="social-description">Síguenos para recibir actualizaciones exclusivas sobre nuestro lanzamiento y novedades del sector</p>
+            
+            <div class="social-links">
+                <a href="https://api.whatsapp.com/send?phone=50688890637" class="social-link whatsapp" title="WhatsApp Business">
+                    📱
+                </a>
+                <a href="#" class="social-link facebook" title="Facebook">
+                    📘
+                </a>
+                <a href="#" class="social-link instagram" title="Instagram">
+                    📷
+                </a>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <span>+506 8889-0637</span>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="contact-icon">🌎</span>
+                    <span>Costa Rica</span>
+                </div>
+            </div>
+        </div>
     </div>
 
-  </section><!-- End Hero Section -->
+    <script>
+        // Enhanced security measures
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
 
-  <main id="main">
+        document.addEventListener('keydown', function(e) {
+            // Disable F12, Ctrl+Shift+I, Ctrl+U, Ctrl+Shift+C
+            if (e.key === 'F12' || 
+                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C')) ||
+                (e.ctrlKey && e.key === 'u')) {
+                e.preventDefault();
+            }
+        });
 
+        // Sophisticated interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.container');
+            const shapes = document.querySelectorAll('.shape');
+            
+            // Enhanced container interaction
+            container.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.01)';
+                this.style.transition = 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+            });
+            
+            container.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
 
+            // Interactive background shapes
+            shapes.forEach((shape, index) => {
+                shape.addEventListener('mouseenter', function() {
+                    this.style.borderColor = 'rgba(184, 134, 11, 0.3)';
+                    this.style.transform = 'scale(1.1)';
+                    this.style.transition = 'all 0.3s ease';
+                });
+                
+                shape.addEventListener('mouseleave', function() {
+                    this.style.borderColor = 'rgba(184, 134, 11, 0.1)';
+                    this.style.transform = 'scale(1)';
+                });
+            });
 
-    <!-- ======= Constructions Section ======= -->
-    <section id="constructions" class="constructions">
-      <div class="container" data-aos="fade-up">
+            // Smooth scroll prevention for body
+            document.body.style.overflow = 'hidden';
+        });
 
-        <div class="section-header">
-          <h2>DIFERENCIACIÓN DE NUESTRA TABLILLA PVC </h2>
-        </div>
-
-        <div class="row gy-4">
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-item">
-              <div class="row">
-                <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url(assets/img/CalidadSuperior.jpeg);"></div>
-                </div>
-                <div class="col-xl-7 d-flex align-items-center">
-                  <div class="card-body">
-                    <h4 class="card-title">Calidad Superior</h4>
-                    <p>Nuestras tablillas están fabricadas con materiales de alta resistencia, diseñados para soportar las condiciones más exigentes, garantizando durabilidad y longevidad.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Card Item -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="card-item">
-              <div class="row">
-                <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url(assets/img/Variedad\ de\ Diseños\ y\ Acabados.jpg);"></div>
-                </div>
-                <div class="col-xl-7 d-flex align-items-center">
-                  <div class="card-body">
-                    <h4 class="card-title">Variedad de Diseños y Acabados</h4>
-                    <p>Ofrecemos una amplia gama de estilos, colores y texturas que se adaptan a cualquier proyecto, desde interiores modernos hasta exteriores funcionales.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Card Item -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="card-item">
-              <div class="row">
-                <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url(assets/img/Resistencia\ a\ Climas\ Extremos1.jpg);"></div>
-                </div>
-                <div class="col-xl-7 d-flex align-items-center">
-                  <div class="card-body">
-                    <h4 class="card-title">Resistencia a Climas Extremos</h4>
-                    <p>Nuestras tablillas son resistentes al agua, humedad, rayos UV y cambios drásticos de temperatura, manteniendo su apariencia y funcionalidad en todo momento.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Card Item -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="card-item">
-              <div class="row">
-                <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url(assets/img/Amigables\ con\ el\ Medio\ Ambiente.png);"></div>
-                </div>
-                <div class="col-xl-7 d-flex align-items-center">
-                  <div class="card-body">
-                    <h4 class="card-title">Amigables con el Medio Ambiente</h4>
-                    <p>Fabricadas con materiales reciclables, nuestras tablillas son una opción sostenible para proyectos responsables con el entorno.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Card Item -->
-
-        </div>
-
-      </div>
-    </section><!-- End Constructions Section -->
-
-
-    <!-- ======= Alt Services Section ======= -->
-    <section id="alt-services" class="alt-services">
-      <div class="container" data-aos="fade-up">
-
-        <div class="row justify-content-around gy-4">
-          <div class="col-lg-6 img-bg" style="background-image: url(assets/img/Ventajas\ de\ la\ Tablilla\ Plástica.jpg);" data-aos="zoom-in"
-            data-aos-delay="100"></div>
-
-          <div class="col-lg-5 d-flex flex-column justify-content-center">
-            <h3>Ventajas de la Tablilla Plástica PVC </h3>
-            <p> A continuación, te presentamos las principales ventajas que hacen de las tablillas plásticas pvc una solución ideal para tus necesidades.</p>
-
-            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
-              <i class="bi bi-easel flex-shrink-0"></i>
-              <div>
-                <h4><a class="stretched-link">Estética Personalizable</a></h4>
-                <p>Disponibles en diversos colores, texturas y acabados, se adaptan a cualquier diseño arquitectónico o decorativo.</p>
-              </div>
-            </div><!-- End Icon Box -->
-
-            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-patch-check flex-shrink-0"></i>
-              <div>
-                <h4><a class="stretched-link">Durabilidad y Resistencia</a></h4>
-                <p>Diseñadas para soportar el paso del tiempo, las tablillas plásticas no se deforman, agrietan ni deterioran fácilmente frente a factores externos.</p>
-              </div>
-            </div><!-- End Icon Box -->
-
-            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-brightness-high flex-shrink-0"></i>
-              <div>
-                <h4><a class="stretched-link">Resistencia a Humedad y Agua</a></h4>
-                <p>Ideales para ambientes húmedos, como baños, cocinas o exteriores, ya que no absorben agua ni se dañan con la exposición a la humedad.</p>
-              </div>
-            </div><!-- End Icon Box -->
-
-            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-brightness-high flex-shrink-0"></i>
-              <div>
-                <h4><a class="stretched-link">Aislamiento Térmico y Acústico</a></h4>
-                <p>Contribuyen a mantener la temperatura interior y reducen los ruidos externos, mejorando el confort en los espacios.</p>
-              </div>
-            </div><!-- End Icon Box -->
-
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Alt Services Section -->
-
-    <!-- ======= Features Section ======= -->
-    <section id="features" class="features section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <ul class="nav nav-tabs row  g-2 d-flex">
-
-          <li class="nav-item col-3">
-            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
-              <h4>TABLILLA ONDULADA</h4>
-            </a>
-          </li><!-- End tab nav item -->
-
-          <li class="nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
-              <h4>TABLILLA LISA</h4>
-            </a><!-- End tab nav item -->
-
-          <li class="nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
-              <h4>TABLILLA CON CANAL</h4>
-            </a>
-          </li><!-- End tab nav item -->
-
-          <li class="nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
-              <h4>TABLILLA IMITACION MADERA</h4>
-            </a>
-          </li><!-- End tab nav item -->
-
-        </ul>
-
-        <div class="tab-content">
-
-          <div class="tab-pane active show" id="tab-1">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center"
-                data-aos="fade-up" data-aos-delay="100">
-                <h3>TABLILLA DE PVC ONDULADA</h3>
-                <p class="fst-italic">
-                  Este tipo de tablilla se distingue por su superficie con ondas o formas curvas, lo que le otorga una estética única y mejora su rendimiento en diversas aplicaciones.
-                </p>
-                <ul>
-                  <li><i class="bi bi-check2-all"></i>Ideal para techos en exteriores, ya que soporta bien la exposición al clima.</li>
-                  <li><i class="bi bi-check2-all"></i>Perfecta para revestir paredes en espacios comerciales o industriales.</li>
-                  <li><i class="bi bi-check2-all"></i> Muy utilizada en construcciones de alto tránsito, donde se requiere durabilidad y resistencia.</li>
-                </ul>
-                <a data-aos="fade-up" data-aos-delay="200" href="projects.html" class="btn-get-started">CATÁLOGO</a>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
-                <img src="assets/img/TABLILLA ONDULADA.jpg" alt="" class="img-fluid">
-              </div>
-            </div>
-          </div><!-- End tab content item -->
-
-          <div class="tab-pane" id="tab-2">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                <h3>TABLILLA DE PVC LISA</h3>
-                <p class="fst-italic">
-                  Estas tablillas tienen una superficie completamente lisa y ofrecen una apariencia moderna y limpia.
-                </p>
-                <ul>
-                  <li><i class="bi bi-check2-all"></i> Perfectas para techos interiores, proporcionando un acabado limpio y moderno, especialmente en cocinas y baños.</li>
-                  <li><i class="bi bi-check2-all"></i> Ideales para revestir paredes en áreas comerciales y residenciales, dando un toque elegante y fácil de mantener.</li>
-                  <li><i class="bi bi-check2-all"></i> Utilizadas en exteriores, ofrecen resistencia al clima y una estética moderna para edificios y viviendas.</li>
-                 
-                </ul>
-                <a data-aos="fade-up" data-aos-delay="200" href="projects.html" class="btn-get-started">CATÁLOGO</a>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/TABLILLA LISA.jpg" alt="" class="img-fluid">
-              </div>
-            </div>
-          </div><!-- End tab content item -->
-
-          <div class="tab-pane" id="tab-3">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                <h3>TABLILLA DE PVC CON CANAL</h3>
-                <ul>
-                  <li><i class="bi bi-check2-all"></i>Gracias a su estructura con canal, es ideal para techos exteriores e interiores, proporcionando una instalación segura y estable.</li>
-                  <li><i class="bi bi-check2-all"></i>Se utiliza en fachadas y paredes exteriores, ya que el canal ayuda a fortalecer la estructura y mejora la resistencia a la intemperie.</li>
-                  <li><i class="bi bi-check2-all"></i>Perfecta para crear divisores de espacios en oficinas o naves industriales, ofreciendo tanto funcionalidad como estética.</li>
-                </ul>
-                <a data-aos="fade-up" data-aos-delay="200" href="projects.html" class="btn-get-started">CATÁLOGO</a>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/TABLILLA CON CANAL.jpg" alt="" class="img-fluid">
-              </div>
-            </div>
-          </div><!-- End tab content item -->
-
-          <div class="tab-pane" id="tab-4">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                <h3>TABLILLA DE PVC IMITACION MADERA</h3>
-                <p class="fst-italic">
-                  Son una opción excelente para aquellos que desean la apariencia de madera sin las complicaciones de mantenimiento que requiere la madera real.
-                </p>
-                <ul>
-                  <li><i class="bi bi-check2-all"></i> Utilizadas en detalles decorativos como molduras, marcos y paneles, añaden un toque de diseño sin sacrificar funcionalidad.</li>
-                  <li><i class="bi bi-check2-all"></i> Perfectas para áreas húmedas como baños, ya que combinan la estética de la madera con la resistencia del PVC a la humedad.</li>
-                  <li><i class="bi bi-check2-all"></i> Usadas para crear barandales o revestimientos de escaleras, aportando un toque natural y elegante a espacios interiores sin el desgaste de la madera real.</li>
-                </ul>
-                <a data-aos="fade-up" data-aos-delay="200" href="projects.html" class="btn-get-started">CATÁLOGO</a>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/TABLILLA IMITACION MADERA.jpeg" alt="" class="img-fluid">
-              </div>
-            </div>
-          </div><!-- End tab content item -->
-
-           <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>Clientes</h2>
-          <p>La satisfacción de nuestros clientes es nuestra prioridad, nos enorgullece ser parte de sus proyectos y ofrecer soluciones de calidad que superen sus expectativas. Aquí compartimos algunas de sus experiencias:</p>
-        </div>
-
-        <div class="slides-2 swiper">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                  <h3>Carlos Andrés Gutiérrez Mora</h3>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                      class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    La calidad de las tablillas plásticas que ofrecen es insuperable. La instalación fue sencilla y el acabado quedó impecable. Definitivamente volveré a comprar aquí.
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                  <h3>María Fernanda López Rodríguez</h3>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                      class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    El servicio al cliente es excelente. Me ayudaron a elegir los productos adecuados para mi proyecto y los recibí a tiempo. ¡Muy recomendados!
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                  <h3>Andrés Ramírez Pérez</h3>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                      class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    Las tablillas plásticas de PROPLAST CR transformaron por completo mi espacio. Son resistentes y tienen un diseño espectacular. Estoy muy satisfecho con mi compra.
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                  <h3>Sofía Herrera Jiménez</h3>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                      class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    Me encantó la asesoría personalizada que recibí. Gracias a sus recomendaciones, pude completar mi proyecto de manera rápida y eficiente. Un gran servicio.
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                  <h3>Luis Arturo Martínez Castro</h3>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                      class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    La relación calidad-precio es excelente. No solo adquirí productos de primera, sino que también me sentí apoyado durante todo el proceso de compra. ¡Gracias!
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section><!-- End Testimonials Section -->
-
-        </div>
-
-      </div>
-    </section><!-- End Features Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-
-
-    <div class="footer-legal text-center position-relative">
-      <div class="container">
-        <div class="footer-logo">
-          <a href="index.html">
-            <img src="assets/img/Logo ProPlast2.png" alt="">
-          </a>
-        </div>  
-        <div class="copyright">
-          &copy; Copyright <strong><span>PROPLAST CR</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-          
-          Designed and Distributed by <a href="https://api.whatsapp.com/send?phone=50672862183">INFINICORE WEB WORKS</a>
-        </div>
-      </div>
-    </div>
-
-  </footer>
-  <!-- End Footer -->
-
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
-
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+        // Advanced cursor tracking effect
+        document.addEventListener('mousemove', function(e) {
+            const cursor = document.querySelector('.cursor');
+            if (!cursor) {
+                const newCursor = document.createElement('div');
+                newCursor.className = 'cursor';
+                newCursor.style.cssText = `
+                    position: fixed;
+                    width: 20px;
+                    height: 20px;
+                    background: radial-gradient(circle, rgba(184, 134, 11, 0.3), transparent);
+                    border-radius: 50%;
+                    pointer-events: none;
+                    z-index: 9999;
+                    transition: transform 0.1s ease;
+                `;
+                document.body.appendChild(newCursor);
+            }
+            
+            const cursor_element = document.querySelector('.cursor');
+            cursor_element.style.left = e.clientX - 10 + 'px';
+            cursor_element.style.top = e.clientY - 10 + 'px';
+        });
+    </script>
 </body>
-
 </html>
