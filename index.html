@@ -125,24 +125,14 @@
         align-items: center;
         gap: 15px;
       }
-      /* Fix para logo y navbar en móvil */
-@media (max-width: 768px) {  
+      /* Fix para logo en móvil - solo espaciado */
+@media (max-width: 768px) {
   .header .container-xl {
-    flex-wrap: nowrap !important;
-    overflow: hidden !important;
+    padding: 0 10px !important;
   }
   
   .header .logo {
-    margin-right: 10px !important;
-    flex-shrink: 0 !important;
-  }
-  
-  .header .navbar {
-    display: none !important;
-  }
-  
-  .mobile-nav-toggle {
-    margin-left: auto !important;
+    margin-right: 15px !important;
   }
 }
       
