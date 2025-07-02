@@ -125,6 +125,26 @@
         align-items: center;
         gap: 15px;
       }
+      /* Fix para logo y navbar en móvil */
+@media (max-width: 768px) {  
+  .header .container-xl {
+    flex-wrap: nowrap !important;
+    overflow: hidden !important;
+  }
+  
+  .header .logo {
+    margin-right: 10px !important;
+    flex-shrink: 0 !important;
+  }
+  
+  .header .navbar {
+    display: none !important;
+  }
+  
+  .mobile-nav-toggle {
+    margin-left: auto !important;
+  }
+}
       
       .btn-professional {
         width: 100%;
