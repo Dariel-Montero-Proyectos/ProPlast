@@ -125,17 +125,37 @@
         align-items: center;
         gap: 15px;
       }
-      /* Fix para logo en móvil - solo espaciado */
-@media (max-width: 768px) {
-  .header .container-xl {
-    padding: 0 10px !important;
-  }
-  
-  .header .logo {
-    margin-right: 15px !important;
-  }
+      /* ESTILOS PARA EL LOGO RESPONSIVE */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
-      
+
+.logo-img {
+    max-height: 50px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+.logo-text {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #fff;
+    white-space: nowrap;
+}
+
+/* En móviles mostramos el texto debajo del logo */
+@media (max-width: 767px) {
+    .logo-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .logo-text {
+        display: block !important;
+        font-size: 1.1rem;
+    }
+}
       .btn-professional {
         width: 100%;
         max-width: 250px;
@@ -154,9 +174,11 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="https://api.whatsapp.com/send?phone=50688890637" class="logo d-flex align-items-center">
+    <div class="logo-container d-flex align-items-center">
+        <img src="assets/img/Logo ProPlast2.png" alt="" class="logo-img">
         
-        <img src="assets/img/Logo ProPlast2.png" alt=""> 
-      </a>
+    </div>
+</a>
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
